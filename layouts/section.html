@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="shell listing">
+  <header class="listing-header">
+    <p class="eyebrow">{{ .Kind }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="listing-intro prose">{{ . }}</div>{{ end }}
+  </header>
+  <div class="text-rows">
+    {{ range .Pages.ByDate.Reverse }}
+    <a class="text-row" href="{{ .RelPermalink }}">
+      <span class="row-date">{{ .Date.Format "2006-01-02" }}</span>
+      <span class="row-main"><strong>{{ .Title }}</strong>{{ with .Description }}<small>{{ . }}</small>{{ end }}</span>
+      <span class="row-side">{{ if eq .Section "writing" }}{{ .ReadingTime }} min{{ else }}→{{ end }}</span>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

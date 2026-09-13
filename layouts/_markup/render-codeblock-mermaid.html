@@ -1,0 +1,4 @@
+{{ .Page.Store.Set "hasMermaid" true }}
+<div class="diagram-wrap width-wide">
+  <pre class="mermaid">{{ .Inner | transform.HTMLEscape | safeHTML }}</pre>
+</div>

@@ -1,0 +1,6 @@
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <span>© {{ now.Year }} {{ site.Params.author }}</span>
+    <span class="footer-links"><a href="{{ with site.Home.OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}">RSS</a> · <a href="{{ "tags/" | relURL }}">Tags</a></span>
+  </div>
+</footer>

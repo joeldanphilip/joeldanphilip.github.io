@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 390" role="img" aria-labelledby="title desc">
+  <title id="title">Example technical architecture</title>
+  <desc id="desc">An input block connects through three processing stages to an output block.</desc>
+  <rect width="1100" height="390" fill="#0e0e0e"/>
+  <g fill="#111111" stroke="#5b5b57" stroke-width="2">
+    <rect x="60" y="145" width="150" height="100"/>
+    <rect x="270" y="145" width="150" height="100"/>
+    <rect x="480" y="145" width="150" height="100"/>
+    <rect x="690" y="145" width="150" height="100"/>
+    <rect x="900" y="145" width="140" height="100"/>
+  </g>
+  <g fill="#ededeb" font-family="ui-monospace, monospace" font-size="20" text-anchor="middle">
+    <text x="135" y="202">Input</text>
+    <text x="345" y="202">Stage 1</text>
+    <text x="555" y="202">Stage 2</text>
+    <text x="765" y="202">Stage 3</text>
+    <text x="970" y="202">Output</text>
+  </g>
+  <g stroke="#8c8c88" stroke-width="2" fill="none">
+    <path d="M210 195 H258"/><path d="M420 195 H468"/><path d="M630 195 H678"/><path d="M840 195 H888"/>
+  </g>
+  <g fill="#8c8c88">
+    <path d="M258 195 l-10 -6 v12z"/><path d="M468 195 l-10 -6 v12z"/><path d="M678 195 l-10 -6 v12z"/><path d="M888 195 l-10 -6 v12z"/>
+  </g>
+  <g fill="#969692" font-family="ui-monospace, monospace" font-size="14">
+    <text x="60" y="55">example / replace with your own technical SVG</text>
+    <text x="270" y="280">simple dataflow placeholder</text>
+  </g>
+</svg>

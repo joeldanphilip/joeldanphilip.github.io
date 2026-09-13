@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="shell article-shell">
+  <article class="article">
+    <header class="article-header">
+      <a class="backlink" href="{{ .Parent.RelPermalink }}">← {{ .Section | humanize }}</a>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="article-deck">{{ . }}</p>{{ end }}
+      {{ partial "entry-meta.html" . }}
+      {{ partial "tags.html" . }}
+    </header>
+
+    <div class="article-layout">
+      <div class="article-body prose">
+        {{ .Content }}
+      </div>
+      {{ if and (eq .Section "writing") (gt .WordCount 350) (.TableOfContents) }}
+      <aside class="toc-wrap" aria-label="Table of contents">
+        <div class="toc-title">On this page</div>
+        {{ .TableOfContents }}
+      </aside>
+      {{ end }}
+    </div>
+
+    {{ partial "article-nav.html" . }}
+  </article>
+</div>
+{{ end }}

@@ -1,0 +1,5 @@
+<div class="entry-meta">
+  <span>published <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time></span>
+  <span>updated <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02 Jan 2006" }}</time></span>
+  {{ if in (slice "writing" "notes") .Section }}<span>{{ .ReadingTime }} min read</span>{{ end }}
+</div>

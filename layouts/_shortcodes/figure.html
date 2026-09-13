@@ -1,0 +1,5 @@
+{{ $width := .Get "width" | default "normal" }}
+<figure class="technical-figure width-{{ $width }}">
+  <img src="{{ .Get "src" | relURL }}" alt="{{ .Get "alt" }}" loading="lazy">
+  {{ with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

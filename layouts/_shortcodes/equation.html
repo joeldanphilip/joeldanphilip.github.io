@@ -1,0 +1,5 @@
+{{ $name := .Get "id" | default (printf "auto-%03d" .Ordinal) }}
+<div class="equation-block" id="eq-{{ $name }}" data-eq-id="{{ $name }}">
+  <div class="equation-math">\[{{ .Inner | transform.HTMLEscape | safeHTML }}\]</div>
+  <a class="equation-number" href="#eq-{{ $name }}" aria-label="Equation"></a>
+</div>

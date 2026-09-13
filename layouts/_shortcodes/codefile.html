@@ -1,0 +1,4 @@
+<div class="code-file">
+  <div class="code-file-head"><span>{{ .Get "title" }}</span></div>
+  {{ transform.Highlight (.Inner | strings.TrimSpace) (.Get "lang" | default "text") }}
+</div>

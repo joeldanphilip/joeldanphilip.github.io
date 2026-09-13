@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="shell article-shell">
+<article class="article project-page">
+  <header class="article-header">
+    <a class="backlink" href="{{ "projects/" | relURL }}">← projects</a>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="article-deck">{{ . }}</p>{{ end }}
+    <dl class="project-meta">
+      {{ with .Params.year }}<div><dt>Year</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.status }}<div><dt>Status</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.institution }}<div><dt>Institution</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.technologies }}<div><dt>Stack</dt><dd>{{ delimit . " · " }}</dd></div>{{ end }}
+    </dl>
+    {{ partial "tags.html" . }}
+  </header>
+  <div class="article-layout">
+    <div class="article-body prose">{{ .Content }}</div>
+    {{ if .TableOfContents }}<aside class="toc-wrap"><div class="toc-title">Case study</div>{{ .TableOfContents }}</aside>{{ end }}
+  </div>
+</article>
+</div>
+{{ end }}

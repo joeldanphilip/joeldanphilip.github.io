@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="shell listing">
+  <header class="listing-header"><p class="eyebrow">tag</p><h1>#{{ .Title }}</h1></header>
+  <div class="text-rows">
+  {{ range .Pages.ByDate.Reverse }}
+    <a class="text-row" href="{{ .RelPermalink }}">
+      <span class="row-date">{{ .Date.Format "2006-01-02" }}</span>
+      <span class="row-main"><strong>{{ .Title }}</strong><small>{{ .Section }}</small></span>
+      <span class="row-side">→</span>
+    </a>
+  {{ end }}
+  </div>
+</div>
+{{ end }}

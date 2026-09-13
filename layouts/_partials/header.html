@@ -1,0 +1,10 @@
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="site-name" href="{{ site.Home.RelPermalink }}">{{ site.Title }}<span aria-hidden="true">_</span></a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

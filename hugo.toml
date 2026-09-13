@@ -1,0 +1,66 @@
+baseURL = "https://joeldanphilip.github.io/"
+languageCode = "en-us"
+title = "Joel's Scratchpad"
+enableRobotsTXT = true
+timeZone = "Asia/Kolkata"
+
+[params]
+  description = "Notes, projects, and technical writing on computer architecture, RTL, FPGA systems, RISC-V, and hardware security."
+  author = "Joel Dan Philip"
+  intro = "I work close to the hardware–software boundary, mostly around computer architecture, RTL, RISC-V, FPGA systems, and hardware security."
+  about = [
+    "I’m an Electronics and Communication Engineering student at IIIT Kottayam. Most of what I enjoy building sits below the application layer: processors, memory systems, interconnects, accelerators, and the tooling needed to understand why they behave the way they do.",
+    "I’m particularly interested in the overlap between computer architecture and hardware security—how isolation, authentication, cryptographic engines, and other security mechanisms change a real microarchitecture once timing, state, memory traffic, and FPGA constraints enter the picture.",
+    "I also work with the CyStar group at IIT Madras on processor and hardware-security projects. This site is my technical scratchpad: longer explanations when a topic deserves them, shorter notes when it doesn’t, and project pages when I have something worth documenting."
+  ]
+  homeImage = ""
+  homeImageAlt = "Portrait of Joel Dan Philip"
+  math = true
+
+[taxonomies]
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
+    codeFences = true
+    guessSyntax = false
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+[permalinks]
+  writing = "/writing/:slug/"
+  notes = "/notes/:slug/"
+  projects = "/projects/:slug/"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+  [[menu.main]]
+    name = "Notes"
+    pageRef = "/notes"
+    weight = 20
+  [[menu.main]]
+    name = "Archive"
+    pageRef = "/archive"
+    weight = 30

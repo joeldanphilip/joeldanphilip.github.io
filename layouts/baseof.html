@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{ site.Language.LanguageCode }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{ partial "header.html" . }}
+  <main id="main" class="site-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  <script src="{{ "js/site.js" | relURL }}" defer></script>
+  {{ if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      securityLevel: 'strict',
+      themeVariables: {
+        darkMode: true,
+        background: '#0b0b0b',
+        primaryColor: '#111111',
+        primaryTextColor: '#ededeb',
+        primaryBorderColor: '#5b5b58',
+        lineColor: '#8c8c88',
+        secondaryColor: '#151515',
+        tertiaryColor: '#0b0b0b',
+        fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',
+        fontSize: '14px'
+      }
+    });
+  </script>
+  {{ end }}
+</body>
+</html>

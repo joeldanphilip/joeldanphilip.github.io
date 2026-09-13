@@ -1,0 +1,19 @@
+<div class="pipeline-demo" data-stages="5">
+  <div class="demo-toolbar">
+    <button type="button" data-action="play">Play</button>
+    <button type="button" data-action="reset">Reset</button>
+    <span class="demo-status" aria-live="polite">cycle 0</span>
+  </div>
+  <div class="pipeline-canvas" role="img" aria-label="Animated five-stage processor pipeline">
+    <svg viewBox="0 0 900 190" xmlns="http://www.w3.org/2000/svg">
+      <line x1="90" y1="105" x2="810" y2="105" class="pipeline-line"/>
+      <g class="stage" transform="translate(35 55)"><rect width="120" height="100"/><text x="60" y="55">IF</text></g>
+      <g class="stage" transform="translate(210 55)"><rect width="120" height="100"/><text x="60" y="55">ID</text></g>
+      <g class="stage" transform="translate(385 55)"><rect width="120" height="100"/><text x="60" y="55">EX</text></g>
+      <g class="stage" transform="translate(560 55)"><rect width="120" height="100"/><text x="60" y="55">MEM</text></g>
+      <g class="stage" transform="translate(735 55)"><rect width="120" height="100"/><text x="60" y="55">WB</text></g>
+      <circle class="pipeline-token" cx="95" cy="105" r="10"/>
+    </svg>
+  </div>
+  <p class="demo-caption">A reusable content animation. It runs only when Play is pressed.</p>
+</div>
